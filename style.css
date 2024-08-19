@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x:hidden ;
+}
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+}
+.nav-bar .logo{
+    color: white;
+    font-size: 20px;
+}
+.nav-bar .nav-links{
+    display: flex;
+    list-style: none;
+}
+.nav-bar .nav-links li{
+    margin-left: 20px;
+}
+.nav-bar .nav-links li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.nav-bar .humbeger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+
+}
+.humbeger span{
+    background-color: white;
+    width: 25px;
+    height: 4px;
+    margin: 4px;
+}
+
+
+@media (max-width: 768px) {
+    .nav-bar .nav-links{
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+    .nav-bar .nav-links li{
+        text-align: center;
+    }
+    .nav-bar .humbeger{
+        display: flex;
+    }
+}
+.nav-links.active{
+    display: flex;
+}
+.humbeger.active span{
+    display: none;
+}
+.humbeger.active::before{
+    content: 'X';
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
